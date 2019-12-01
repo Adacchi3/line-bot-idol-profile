@@ -10,8 +10,9 @@ module Apis
         head :bad_request
       end
 
-      messages =  Message.create_text(client.parse_events_from(body))
-      client.reply_message(event['replyToken'], messages)
+      events = client.parse_events_from(body)
+      Message.send_message(client, events)
+
       head :ok
     end
   end

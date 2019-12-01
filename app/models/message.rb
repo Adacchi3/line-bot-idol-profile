@@ -1,6 +1,5 @@
 class Message < ApplicationRecord
-  def self.create_text(events)
-    messages = []
+  def self.send_message(client, event)
     events.each { |event|
       case event
       when Line::Bot::Event::MessageType::Text
@@ -8,9 +7,8 @@ class Message < ApplicationRecord
           type: 'text',
           text: 'hoge'
         }
-        messages << message
+        client.reply_message(event['replyToken'], messages)
       end
     }
-    messages
   end
 end
