@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-  def self.send_message(client, event)
+  def self.send_message(client, events)
     events.each { |event|
       case event
       when Line::Bot::Event::MessageType::Text
