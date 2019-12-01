@@ -3,14 +3,14 @@ module Apis
     protect_from_forgery :except => [:callback]
 
     def callback
-      client    = Clients.init
+      client    = Client.init
       body      = request.body.read
       signature = request.env['HTTP_X_LINE_SIGNATURE']
       unless client.validate_signature(body, signature)
         head :bad_request
       end
 
-      messages =  Messages.create_messages(client.parse_events_form(body))
+      messages =  Message.create_messages(client.parse_events_from(body))
       client.reply_message(event['replyToken'], messages)
       head :ok
     end
