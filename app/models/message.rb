@@ -3,7 +3,7 @@ class Message < ApplicationRecord
     messages = []
     events.each { |event|
       case event
-      when Line::Bot::Event::Message::Text
+      when Line::Bot::Event::MessageType::Text
         message = {
           type: 'text',
           text: 'hoge'
