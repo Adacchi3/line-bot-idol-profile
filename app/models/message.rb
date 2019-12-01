@@ -7,7 +7,7 @@ class Message < ApplicationRecord
           type: 'text',
           text: 'hoge'
         }
-        client.reply_message(event['replyToken'], messages)
+        client.reply_message(event['replyToken'], message)
       end
     }
   end
