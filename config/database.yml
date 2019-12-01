@@ -25,5 +25,5 @@ production:
   adapter: postgresql
   encoding: unicode
   database: line-bot-idol-profile_production
-  username: line-bot-idol-profile
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: ENV['DATABASE_USER']
+  password: ENV['DATABASE_PASSWORD']
