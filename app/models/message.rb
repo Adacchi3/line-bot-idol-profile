@@ -8,6 +8,12 @@ class Message < ApplicationRecord
           text: 'hoge'
         }
         client.reply_message(event['replyToken'], message)
+      else
+        message = {
+          type: 'text',
+          text: 'よくわかりません'
+        }
+        client.reply_message(event['replyToken'], message)
       end
     }
   end
