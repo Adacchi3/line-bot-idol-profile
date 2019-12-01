@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-  def create_reply(events)
+  def self.create_text(events)
     messages = []
     events.each { |event|
       case event
