@@ -12,7 +12,7 @@ class Message < ApplicationRecord
     when Line::Bot::Event::Message
       case event.type
       when Line::Bot::Event::MessageType::Text
-        message = Idol.profile(event.message['text'].gsub(/[^a-zA-Z0-9_]/, ''))
+        message = Idol.profile(event.message['text'].gsub(/[<>&"%.;'{}]/, ''))
       else
         message = {
           type: 'text',
