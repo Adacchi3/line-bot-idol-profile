@@ -7,7 +7,7 @@ class Message < ApplicationRecord
   end
 
   private
-  def create_message(event)
+  def self.create_message(event)
     case event
     when Line::Bot::Event::Message
       case event.type
