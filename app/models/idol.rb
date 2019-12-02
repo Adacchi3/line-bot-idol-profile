@@ -1,6 +1,6 @@
 class Idol < ApplicationController
   def self.profile
-    return {
+    {
       "type": "bubble",
       "hero": {
         "type": "image",
