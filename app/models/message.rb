@@ -12,11 +12,7 @@ class Message < ApplicationRecord
     when Line::Bot::Event::Message
       case event.type
       when Line::Bot::Event::MessageType::Text
-        message = {
-          type: "flex",
-          altText: "アイドルのプロフィールを閲覧しました。",
-          contents: Idol.profile
-        }
+        message = Idol.profile(event.message['text'].gsub(/[^a-zA-Z0-9_]/, ''))
       else
         message = {
           type: 'text',
