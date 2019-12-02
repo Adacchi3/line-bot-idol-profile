@@ -28,7 +28,7 @@ class Idol < ApplicationController
     profiles = result.dig('results','bindings')
     return {
       type: 'text',
-      text: 'お探しのアイドルのプロフィールはメモ帳にはありませんでした。'
+      text: name
     } if profiles.size == 0
 
     contents = []
