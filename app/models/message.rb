@@ -7,7 +7,7 @@ class Message < ApplicationRecord
         when Line::Bot::Event::MessageType::Text
           message = {
             type: "flex",
-            altText: "flex message",
+            altText: "アイドルのプロフィールを閲覧しました。",
             contents: Idol.profile
           }
           client.reply_message(event['replyToken'], message)
@@ -18,12 +18,6 @@ class Message < ApplicationRecord
           }
           client.reply_message(event['replyToken'], message)
         end
-      else
-        message = {
-          type: 'text',
-          text: event.to_s
-        }
-        client.reply_message(event['replyToken'], message)
       end
     }
   end
