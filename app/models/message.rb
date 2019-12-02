@@ -22,6 +22,11 @@ class Message < ApplicationRecord
           text: 'メモ帳はその形式での検索に対応しておりません。'
         }
       end
+    else
+      {
+        type: 'text',
+        text: event.to_s
+      }
     end
   end
 end
