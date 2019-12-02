@@ -5,10 +5,7 @@ class Message < ApplicationRecord
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          message = {
-            type: 'text',
-            text: Idol.profile
-          }
+          message = Idol.profile
           client.reply_message(event['replyToken'], message)
         else
           message = {
