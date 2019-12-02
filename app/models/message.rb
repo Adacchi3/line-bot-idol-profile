@@ -1,32 +1,34 @@
 class Message < ApplicationRecord
   def self.send_message(client, events)
     events.each { |event|
-      message = create_message(event)
-      client.reply_message(event['replyToken'], message)
+      case event
+      when Line::Bot::Event::Message
+        case event.type
+        when Line::Bot::Event::MessageType::Text
+          message = {
+            type: 'text',
+            text: Idol.profile
+          }
+          client.reply_message(event['replyToken'], message)
+        else
+          message = {
+            type: 'text',
+            text: 'メモ帳はその形式での検索に対応しておりません。'
+          }
+          client.reply_message(event['replyToken'], message)
+        end
+      else
+        message = {
+          type: 'text',
+          text: event.to_s
+        }
+        client.reply_message(event['replyToken'], message)
+      end
     }
   end
 
   private
   def self.create_message(event)
-    case event
-    when Line::Bot::Event::Message
-      case event.type
-      when Line::Bot::Event::MessageType::Text
-        {
-          type: 'text',
-          text: Idol.profile
-        }
-      else
-        {
-          type: 'text',
-          text: 'メモ帳はその形式での検索に対応しておりません。'
-        }
-      end
-    else
-      {
-        type: 'text',
-        text: event.to_s
-      }
-    end
+  
   end
 end
