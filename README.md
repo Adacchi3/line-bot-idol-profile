@@ -1,24 +1,16 @@
-# README
+# LINE Bot of Searching Idol Profile in the Idol M@ster Series
+<img src="https://user-images.githubusercontent.com/23295874/70140941-3b7d4080-16d9-11ea-939a-44bb482ad167.png" width="360">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 友だち追加はこちらからどうぞ
+https://lin.ee/b0jn6Zn
 
-Things you may want to cover:
+<img src="https://qr-official.line.me/sid/M/198qqlfc.png">
 
-* Ruby version
+## Versions
+- ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]
+- Rails 5.2.4
 
-* System dependencies
+Running App on Heroku
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Special Thanks 
+- https://github.com/imas/imasparql
