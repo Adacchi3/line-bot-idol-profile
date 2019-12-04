@@ -4,7 +4,7 @@
 ## 友だち追加はこちらからどうぞ
 https://lin.ee/b0jn6Zn
 
-<img src="https://qr-official.line.me/sid/M/198qqlfc.png">
+<img src="https://user-images.githubusercontent.com/23295874/70142388-7765d500-16dc-11ea-9411-b280f8960d98.png">
 
 ## Versions
 - ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]
